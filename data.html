@@ -19,6 +19,7 @@
     #table> div> div.gridjs-wrapper> table> thead> tr> th:nth-child(3)> div {width: 200px;}
     #table> div> div.gridjs-wrapper> table> thead> tr> th:nth-child(6)> div {width: 200px;}
     #table> div> div.gridjs-wrapper> table> thead> tr> th:nth-child(12)> div {width: 200px;}
+    #table> div> div.gridjs-wrapper> table> thead> tr> th:nth-child(15)> div {width: 150px;}
   </style>
   <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
   <script>
@@ -37,8 +38,23 @@
         "BMI",
         "โรคประจำตัว",
         "โรคอื่นๆ",
+        "ท่านเคยเจ็บป่วยด้วยโรคจากการทำงาน",
+        'ในรอบ 1 ปี ท่านเคยประสบอุบัติเหตุ/การบาดเจ็บจากการทำงานหรือไม่',
+        'แผนก-ตำแหน่งงานที่ปฏิบัติ',
+        'อายุการทำงาน......ปี.....เดือน',
+        'ทำงานวันละกี่ชั่วโมงต่อวัน (ชั่วโมง)',
+        'ทำงานวันละกี่วันต่อสัปดาห์ (วัน)',
+        'คุณเคยดื่มเครื่องดื่มแอลกอฮอล์ เช่น เบียร์ เหล้า ไวน์ หรือไม่?',
+        'ท่านสูบบุหรี่หรือไม่และบ่อยเพียงใด',
+        'ท่านออกกำลังกายหรือเล่นกีฬาประเภทใด',
+        'ระยะเวลาการออกกำลังกายหรือเล่นกีฬา (นาที/ครั้ง)',
+        'ท่านเคยติดเชื้อโควิด-19 (COVID-19) หรือไม่',
+        'ท่านได้รับวัคซีนมาแล้วจำนวนกี่ เข็ม',
+        'ท่านมีภาระหนี้สินหรือมั้ย',
+        'คะแนนรวมประเมินความเครียด(Strain)',
+
         {
-          name: "คะแนนประเมินความเครียด",
+          name: "คะแนนรวมประเมินความเครียด(Strain)",
           formatter: (cell) => {
             if(isNaN(cell)){
                 return  gridjs.html(`<div>-</div>`);
@@ -75,6 +91,19 @@
               employee.BMI,
               employee.congenital_disease,
               employee.other_congenital_disease,
+              employee.sick,
+              employee.accident,
+              employee.job_position,
+              employee.working_life,
+              employee.hours_work,
+              employee.day_work,
+              employee.drinking_alcohol1,
+              employee.smoke_often1,
+              employee.exercise1,
+              employee.exercise2,
+              employee.covid1,
+              employee.covid2,
+              employee.debt_information,
               Strain,
             ];
           }),
